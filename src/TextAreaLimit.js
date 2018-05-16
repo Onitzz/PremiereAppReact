@@ -10,6 +10,7 @@ class TextAreaLimit extends Component {
     render() {
         return (
         <div>
+            <h2>TextArea Limité</h2>
             <textarea			
             className={this.props.classes}
             onChange={(e) => this.setState({text: e.target.value})} 
@@ -17,8 +18,11 @@ class TextAreaLimit extends Component {
             maxLength= {this.props.maxlength } />
             <br/>
             <span>Nombre de caractères : {this.state.text.length}</span>
-            <h5>Visualisation : {this.state.text}</h5>
-            <p>Lorem</p>
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <p class="card-text">{this.state.text}</p>
+                </div>
+            </div>
         </div>
         )
     };
