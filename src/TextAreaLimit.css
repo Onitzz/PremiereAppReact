@@ -1,0 +1,26 @@
+.textarea {
+    box-shadow: 0px 0px 15px #d8d8d8; 
+}
+
+.previ {
+    margin : 10px 0;
+    transition: 0.3s;
+    max-height: 0;
+    min-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0px 0px 15px #d8d8d8; 
+}
+
+.previ.show {
+    opacity: 1;
+    visibility: visible; 
+    max-height: 300px;
+    overflow: auto;
+}
+
+.infoTextarea{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}

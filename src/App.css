@@ -1,3 +1,28 @@
+html, body, #root{
+    background-color: #252525;
+    height: 100%;
+}
+
+.container {
+    background-color: #f7f7f7;
+    height: 100%;
+}
+
 img {
     width : 150px;
+}
+
+.titleSection{
+    padding: 5px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardContent {
+    width: 18rem;
 }
