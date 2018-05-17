@@ -3,6 +3,7 @@ import './App.css';
 import Article from './Article';
 import TextEditable from './TextEditable';
 import TextAreaLimit from './TextAreaLimit';
+import Pouce from './Pouce';
 
 class App extends Component {
 	state = {
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <div className='container'>
         <h1>Mon composant APP</h1>
+        <Pouce/>
 				<TextAreaLimit maxlength='140'/>
         <TextEditable classes='form-control' save={ this.save }>
           <h2 className='titleSection'>{this.state.title}</h2>
