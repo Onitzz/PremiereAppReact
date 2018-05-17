@@ -6,6 +6,7 @@ html, body, #root{
 .container {
     background-color: #f7f7f7;
     height: 100%;
+    overflow: auto;
 }
 
 img {
@@ -20,9 +21,9 @@ img {
 
 .content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .cardContent {
-    width: 18rem;
+    width: 20rem;
 }

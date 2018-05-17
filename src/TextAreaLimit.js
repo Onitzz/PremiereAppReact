@@ -6,16 +6,16 @@ class TextAreaLimit extends Component {
 
     state = {
         text: '',
-        previ: false
+        preview: false
     };
 
     onToggle = () => {
-        this.setState({ previ : !this.state.previ})
+        this.setState({ preview : !this.state.preview})
     };
 
 
-    renderPrevisualisation = () => {
-        if (this.state.previ){
+    renderPreview = () => {
+        if (this.state.preview){
             return (
                 <div className="card bg-light mb-3 previ show">
                     <div className="card-body">
@@ -39,22 +39,36 @@ class TextAreaLimit extends Component {
         }
     }
 
+    changeText = (event) => {
+        this.setState({text: event.target.value});
+    };
+
+
     render() {
+        const style = {};
+        const length = this.state.text.length;
+
+        if(length > (this.props.maxlength - 10)){
+            style.color = 'orangered'
+        }
         return (
         <div>
             <h2>Message</h2>
             <div>
                 <textarea			
-                className={this.props.classes}
-                onChange={(e) => this.setState({text: e.target.value})} 
-                style={{ color : this.state.text.length < (this.props.maxlength - 10) ? 'black' : 'red'}} 
-                maxLength= {this.props.maxlength } />
+                    className={this.props.classes}
+                    onChange={this.changeText} 
+                    style={style} 
+                    maxLength= {this.props.maxlength } />
             </div>
             <div className="infoTextarea">
-                <span>Nombre de caractères : {this.state.text.length}</span>
-                <button onClick={this.onToggle} type="button" className="btn btn-secondary btn-sm">Prévisualisation</button>
+                <span>Nombre de caractères : {length}</span>
+                <button 
+                    onClick={this.onToggle} 
+                    type="button" 
+                    className="btn btn-secondary btn-sm">Prévisualisation</button>
             </div>
-            {this.renderPrevisualisation()}
+            {this.renderPreview()}
         </div>
         )
     };
