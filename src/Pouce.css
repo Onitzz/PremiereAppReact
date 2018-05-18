@@ -1,0 +1,22 @@
+.content-like-dislike{
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+}
+
+.pouce-up, .pouce-down{
+    margin: 0 10px 0 0;
+    color: #bbb;
+    cursor: pointer;
+}
+
+
+
+.active > .logo-pouce,
+.pouce-up:hover > .logo-pouce, .pouce-down:hover > .logo-pouce{
+    color: #222;
+}
+
+.logo-pouce{
+    margin: 0 10px 0 0;
+}
